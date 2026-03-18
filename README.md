@@ -1,5 +1,5 @@
-***Universidade Federal do Rio Grande do Norte***                       
-***Disciplina:*** ECT3699 - DESENVOLVIMENTO WEB FRONTEND - T01 (2026.1)
+**Universidade Federal do Rio Grande do Norte**                       
+**Disciplina:** ECT3699 - DESENVOLVIMENTO WEB FRONTEND - T01 (2026.1)
 
 ***Projeto01: DESENVOLVIMENTO WEB FRONTEND***
 
