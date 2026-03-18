@@ -1,9 +1,280 @@
 <!DOCTYPE html>
-<html>
-<body>
 
-<h2>Paris</h2>
-<img src="pexels-rosivan-morais-6053202.jpg" alt="Trulli" width="500" height="333">
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Front-end Pro | Curso Completo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-size: 24px; vertical-align: middle; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Front-end Pro</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#about">Sobre</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#curriculum">Currículo</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#projects">Projetos</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#faq">FAQ</a>
+</nav>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-lg px-6 py-2 text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                        Matricule-se
+                    </button>
+</div>
+</header>
+<main class="flex flex-col">
+<section class="relative flex min-h-[870px] flex-col items-center justify-center p-6 text-center overflow-hidden">
+<div class="absolute inset-0 z-0 bg-slate-100 dark:bg-background-dark">
+<div class="absolute inset-0 opacity-20 dark:opacity-30" data-alt="Abstract grid pattern with tech elements" style="background-image: radial-gradient(circle at 2px 2px, #0d59f2 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Vagas abertas para 2024
+                        </div>
+<h1 class="text-slate-900 dark:text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
+                            Domine o <span class="text-primary">Front-end</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto mb-10">
+                            Do zero ao profissional com as tecnologias mais modernas: HTML5, CSS3, JavaScript e React.
+                        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white rounded-lg h-14 px-8 text-base font-bold shadow-xl shadow-primary/30 transition-all">
+                                Quero começar agora
+                            </button>
+<button class="w-full sm:w-auto border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white rounded-lg h-14 px-8 text-base font-bold transition-all">
+                                Saiba Mais
+                            </button>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 md:px-20 bg-background-light dark:bg-[#151c2c]" id="about">
+<div class="max-w-[960px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6">
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight">Sobre o Curso</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                                Nossa missão é empoderar desenvolvedores através de um aprendizado prático e focado no mercado de trabalho. Não ensinamos apenas sintaxe; ensinamos como construir aplicações reais.
+                            </p>
+<div class="grid grid-cols-1 gap-4 mt-4">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary">groups</span>
+<div>
+<h3 class="text-slate-900 dark:text-white font-bold">Comunidade Ativa</h3>
+<p class="text-sm text-slate-500">Troque experiências com milhares de alunos.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<div>
+<h3 class="text-slate-900 dark:text-white font-bold">Certificação Válida</h3>
+<p class="text-sm text-slate-500">Reconhecimento comprovado pelo mercado.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover" data-alt="Developer working on a laptop with code on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD-2eBJRlAiqhJwavVnazLKZXlJY-Fg_z0dyYMvbuZULLbNb8lDjXkq7jpY9Ey_FzPMUu9x6wVlC9gvD8KA4G8ndej4GSZI65HRZ-PWxB854zJndypL1Jgj3TMQOPyBASRN4ljUYeMMFfjjKzuCWBeTCL-R0T_nhud5RlF0aiiib1KT6-l8IteVy7qGrY-2Why6jIcTOUOHLJS3OwLYWd62zcItd_7q_NqalNxYg5IQRkIt2e2wXYHIF5b8oDQz9BQ7mTvTmpRNRAx"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 md:px-20" id="curriculum">
+<div class="max-w-[960px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold mb-4">O que você vai aprender</h2>
+<p class="text-slate-500 max-w-xl mx-auto">Uma trilha pensada para te levar do zero absoluto até a autonomia total no desenvolvimento web moderno.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">html</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Base Sólida</h3>
+<p class="text-slate-500 text-sm leading-normal">Estruturação com HTML5 semântico e estilização avançada com CSS3, Flexbox e Grid.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">javascript</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Lógica (JS)</h3>
+<p class="text-slate-500 text-sm leading-normal">Domine a lógica de programação, manipulação de DOM, APIs e JavaScript Assíncrono.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">deployed_code</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Modernidade</h3>
+<p class="text-slate-500 text-sm leading-normal">Aprenda React, Hooks, Context API e as bibliotecas mais utilizadas no ecossistema.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Boas Práticas</h3>
+<p class="text-slate-500 text-sm leading-normal">Performance, SEO, Acessibilidade, Clean Code e testes automatizados para front-end.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 md:px-20 bg-background-light dark:bg-[#0b0f1a]" id="projects">
+<div class="max-w-[960px] mx-auto">
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold mb-12 text-center">Projetos que você vai construir</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 border border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern administrative dashboard UI design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrlpVcXkPTDckz-lfuFXO3C1rwea5bwY-Iy6_UmgX-rE5BTKy2Cj11R40ibLOScmLV-hQ5aB5rvilrz1a-euj3X2jGY4tncPmy_PnWqILCd8bpj-plsLVlrjOhbFCk8_bU4z-Wcv8jPjLeoi7upB2-sRjyAtU2DezeJpw1qr3w5P23vIYNDfzgrgRwXFm8o82ythuDjSGsDmX1p1ExJDY9lnD94b2QiwVHow93WCI1t50CfE2Ahw5ofRdcCFEeljclHm5F0yNIGSSW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent flex items-end p-6">
+<div>
+<p class="text-primary text-xs font-bold uppercase mb-1">Aplicação Web</p>
+<h4 class="text-white font-bold text-lg">Dashboard Financeiro</h4>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 border border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Online store interface showing products" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE_RxOwj7SzpauPgsuQwVr7gWyroc-b6Y-UYD7TfNM9pJBJKUyru-TgDTXYyi6Ic_HZ1-O-u9NwM5pBFptKK7HJBEaGldVFzn4bM9zJHY_a-r7pVLXN_xeA_G7AzC-2UvdvLXaFoP6H0__VpfdHkTg2IxHGMZ7-WzgnhebaqTNfNKlmUYrJWtEqLxUrt5KV5ejMs6rcN9RHL3blbd7wIZX-gHOMzAVea2E6gF0I35ST01CHknkaCr2MA6KgQ0OJLcZ3BL9PogQktkb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent flex items-end p-6">
+<div>
+<p class="text-primary text-xs font-bold uppercase mb-1">E-commerce</p>
+<h4 class="text-white font-bold text-lg">Loja Virtual Completa</h4>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 border border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist personal portfolio website" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPShZ6-rN-ULHDX9RZ-zPCRlQMqKb1_Hi6loc06gMeLqVVU3iIdY5uU3gQ7nHBzPetUXyfrAUYg9RPZfFMGSerJjGYMqWY860mKHY_HZUfnO3NfgeeIJYOJiKvOsFskNm1ew8s-40zz3MPu4bvdN9EmwJCr2vUtYQl0IRRSdn0wkGPGPEcUMOUG1K-lzKebbxvkCy9UE9JI3-1zh5d-fSJ4LhGtFQL07GOrYZEi-hca6IwC6ch17_QfaMd89fCzAzroWPrJuoCLetQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent flex items-end p-6">
+<div>
+<p class="text-primary text-xs font-bold uppercase mb-1">Portfolio</p>
+<h4 class="text-white font-bold text-lg">Seu Próprio Site</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 md:px-20" id="faq">
+<div class="max-w-[720px] mx-auto">
+<h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-10 text-center">Perguntas Frequentes</h2>
+<div class="flex flex-col gap-4">
+<details class="group p-6 rounded-xl bg-background-light dark:bg-[#182234] border border-slate-200 dark:border-slate-800 cursor-pointer">
+<summary class="flex items-center justify-between text-slate-900 dark:text-white font-bold list-none">
+                                    Preciso ter conhecimento prévio?
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-slate-500 leading-relaxed">
+                                    Não! O curso é estruturado para levar você do zero absoluto até o nível profissional. Começamos com os fundamentos básicos da web.
+                                </p>
+</details>
+<details class="group p-6 rounded-xl bg-background-light dark:bg-[#182234] border border-slate-200 dark:border-slate-800 cursor-pointer">
+<summary class="flex items-center justify-between text-slate-900 dark:text-white font-bold list-none">
+                                    Quanto tempo dura o curso?
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-slate-500 leading-relaxed">
+                                    O acesso é vitalício. Em média, nossos alunos concluem todos os módulos e projetos em 6 a 8 meses, estudando 5 horas por semana.
+                                </p>
+</details>
+<details class="group p-6 rounded-xl bg-background-light dark:bg-[#182234] border border-slate-200 dark:border-slate-800 cursor-pointer">
+<summary class="flex items-center justify-between text-slate-900 dark:text-white font-bold list-none">
+                                    Terei ajuda durante o curso?
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-slate-500 leading-relaxed">
+                                    Com certeza! Temos uma comunidade exclusiva no Discord e suporte individual na plataforma para tirar todas as suas dúvidas técnicas.
+                                </p>
+</details>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 md:px-20 bg-primary">
+<div class="max-w-[960px] mx-auto text-center flex flex-col items-center gap-8">
+<h2 class="text-white text-4xl md:text-5xl font-black">Transforme sua carreira hoje.</h2>
+<p class="text-white/80 text-lg max-w-xl">
+                            Junte-se a mais de 10.000 alunos e comece a criar o futuro da web. Garantia de 30 dias ou seu dinheiro de volta.
+                        </p>
+<button class="bg-white text-primary hover:bg-slate-100 rounded-lg h-14 px-12 text-lg font-bold shadow-2xl transition-all">
+                            Começar Agora
+                        </button>
+</div>
+</section>
+</main>
+<footer class="bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-16 px-6 md:px-20">
+<div class="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold">Front-end Pro</h2>
+</div>
+<p class="text-slate-500 text-sm max-w-xs mb-6">
+                            Formando desenvolvedores de elite para as melhores empresas de tecnologia do mundo.
+                        </p>
+<div class="flex gap-4">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-6">Links Rápidos</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Grade Curricular</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Depoimentos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mentoria</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Certificado</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-6">Suporte</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Central de Ajuda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contato</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[960px] mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2024 Front-end Pro. Todos os direitos reservados.</p>
+<div class="flex gap-6">
+<span>Desenvolvido com ❤️ para Devs</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
 
 <a href="index.html">Voltar</a>
 
