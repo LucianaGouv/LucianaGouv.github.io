@@ -1,282 +1,406 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-br"><head>
+<html class="dark" lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Front-end Pro | Curso Completo</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0d59f2",
-                        "background-light": "#f5f6f8",
-                        "background-dark": "#101622",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#ff9cb2",
+              "surface-tint": "#a68cff",
+              "primary-fixed": "#c8b7ff",
+              "error": "#fd6f85",
+              "on-background": "#dee5fd",
+              "secondary-fixed": "#9cf0ff",
+              "on-surface": "#dee5fd",
+              "on-tertiary-container": "#720030",
+              "on-secondary-container": "#00b4c9",
+              "surface-bright": "#232c40",
+              "surface-container-low": "#0e131e",
+              "on-primary": "#25006b",
+              "tertiary-fixed": "#ff9cb2",
+              "on-error": "#490013",
+              "inverse-surface": "#faf9ff",
+              "on-tertiary": "#830039",
+              "background": "#0a0e17",
+              "secondary-container": "#002a30",
+              "on-tertiary-fixed-variant": "#820038",
+              "error-container": "#8a1632",
+              "outline": "#6e758a",
+              "on-surface-variant": "#a3abc1",
+              "primary-dim": "#7e51ff",
+              "outline-variant": "#40485b",
+              "tertiary-fixed-dim": "#ff85a4",
+              "inverse-primary": "#6834eb",
+              "surface-container-high": "#191f2e",
+              "primary-fixed-dim": "#bba6ff",
+              "surface": "#0a0e17",
+              "on-primary-container": "#ffffff",
+              "secondary-fixed-dim": "#49e7ff",
+              "on-secondary-fixed": "#00464f",
+              "on-error-container": "#ff97a3",
+              "surface-variant": "#1e2637",
+              "tertiary": "#ffb1c1",
+              "surface-container": "#141926",
+              "on-primary-fixed-variant": "#4e00cd",
+              "primary-container": "#7c4dff",
+              "surface-dim": "#0a0e17",
+              "surface-container-highest": "#1e2637",
+              "secondary-dim": "#00cbe2",
+              "on-primary-fixed": "#2d007f",
+              "on-secondary-fixed-variant": "#006571",
+              "on-tertiary-fixed": "#48001c",
+              "surface-container-lowest": "#000000",
+              "secondary": "#00daf3",
+              "error-dim": "#c8475d",
+              "tertiary-dim": "#ff6c95",
+              "inverse-on-surface": "#515560",
+              "primary": "#a68cff",
+              "on-secondary": "#004750"
             },
-        }
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
     </script>
 <style>
-        body { font-family: 'Inter', sans-serif; }
-        .material-symbols-outlined { font-size: 24px; vertical-align: middle; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .neural-grid {
+            background-image: linear-gradient(to right, rgba(64, 72, 91, 0.1) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(64, 72, 91, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-card {
+            backdrop-filter: blur(12px);
+            background: rgba(25, 31, 46, 0.6);
+        }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
-<div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined text-3xl">terminal</span>
-<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Front-end Pro</h2>
+<body class="bg-background text-on-surface font-body selection:bg-secondary/30">
+<!-- Neural Grid Background -->
+<div class="fixed inset-0 neural-grid pointer-events-none z-0"></div>
+<div class="fixed top-0 left-0 w-full h-full bg-gradient-to-tr from-background via-background to-primary/5 pointer-events-none z-0"></div>
+<!-- TopAppBar -->
+<header class="bg-slate-950/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-2xl shadow-violet-500/10">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-violet-400 dark:text-violet-300">grid_view</span>
+<span class="text-xl font-bold text-white tracking-tighter uppercase font-headline">Luciana Gouveia Machado</span>
 </div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<nav class="flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#about">Sobre</a>
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#curriculum">Currículo</a>
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#projects">Projetos</a>
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#faq">FAQ</a>
+<nav class="hidden md:flex items-center gap-8 font-label text-sm font-semibold uppercase tracking-widest">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#">Início</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#expertise">Especialidade</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#experience">Experiência</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#innovation">Inovação</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#contact">Contato</a>
 </nav>
-<button class="bg-primary hover:bg-primary/90 text-white rounded-lg px-6 py-2 text-sm font-bold transition-all shadow-lg shadow-primary/20">
-                        Matricule-se
-                    </button>
+<div class="flex items-center gap-4 text-violet-400">
+<span class="material-symbols-outlined hover:bg-white/5 transition-all duration-300 p-2 rounded-full cursor-pointer">mail</span>
+<span class="material-symbols-outlined hover:bg-white/5 transition-all duration-300 p-2 rounded-full cursor-pointer">account_circle</span>
+</div>
 </div>
 </header>
-<main class="flex flex-col">
-<section class="relative flex min-h-[870px] flex-col items-center justify-center p-6 text-center overflow-hidden">
-<div class="absolute inset-0 z-0 bg-slate-100 dark:bg-background-dark">
-<div class="absolute inset-0 opacity-20 dark:opacity-30" data-alt="Abstract grid pattern with tech elements" style="background-image: radial-gradient(circle at 2px 2px, #0d59f2 1px, transparent 0); background-size: 40px 40px;"></div>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark"></div>
-</div>
-<div class="relative z-10 max-w-4xl mx-auto">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
-                            Vagas abertas para 2024
-                        </div>
-<h1 class="text-slate-900 dark:text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
-                            Domine o <span class="text-primary">Front-end com o Professor Aquiles </span>
+<main class="relative z-10 pt-24 pb-32">
+<!-- Hero Section -->
+<section class="min-h-[870px] flex flex-col justify-center px-6 max-w-7xl mx-auto relative mb-20">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-20 -left-20 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]"></div>
+<div class="relative z-10 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-variant/40 border border-outline-variant/20 text-secondary text-xs font-label uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    Acadêmica Luminescente
+                </div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-headline font-bold tracking-tight text-on-surface leading-tight">
+                    Luciana Gouveia <br/>
+<span class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">Machado</span>
 </h1>
-<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto mb-10">
-                            Do zero ao profissional com as tecnologias mais modernas: HTML5, CSS3, JavaScript e React.
-                        </p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-<button class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white rounded-lg h-14 px-8 text-base font-bold shadow-xl shadow-primary/30 transition-all">
-                                Quero começar agora
-                            </button>
-<button class="w-full sm:w-auto border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white rounded-lg h-14 px-8 text-base font-bold transition-all">
-                                Saiba Mais
-                            </button>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium max-w-3xl">
+                    Profissional de Educação, Inovação e Tecnologia. <br/>
+<span class="text-on-surface">Transformando educação em inovação e conectando pessoas ao futuro através da tecnologia.</span>
+</p>
+<div class="flex flex-wrap gap-6 pt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold rounded-xl shadow-lg shadow-primary/25 hover:scale-105 transition-transform">
+                        Ver Portfólio
+                    </button>
+<button class="px-8 py-4 border border-outline-variant/30 hover:bg-secondary-container/20 text-secondary font-bold rounded-xl transition-all">
+                        Entrar em Contato
+                    </button>
 </div>
 </div>
 </section>
-<section class="py-20 px-6 md:px-20 bg-background-light dark:bg-[#151c2c]" id="about">
-<div class="max-w-[960px] mx-auto grid md:grid-cols-2 gap-12 items-center">
-<div class="flex flex-col gap-6">
-<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight">Sobre o Curso</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                                Nossa missão é empoderar desenvolvedores através de um aprendizado prático e focado no mercado de trabalho. Não ensinamos apenas sintaxe; ensinamos como construir aplicações reais.
-                            </p>
-<div class="grid grid-cols-1 gap-4 mt-4">
-<div class="flex items-start gap-4 p-4 rounded-xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800">
-<span class="material-symbols-outlined text-primary">groups</span>
-<div>
-<h3 class="text-slate-900 dark:text-white font-bold">Comunidade Ativa</h3>
-<p class="text-sm text-slate-500">Troque experiências com milhares de alunos.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 rounded-xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800">
-<span class="material-symbols-outlined text-primary">verified_user</span>
-<div>
-<h3 class="text-slate-900 dark:text-white font-bold">Certificação Válida</h3>
-<p class="text-sm text-slate-500">Reconhecimento comprovado pelo mercado.</p>
-</div>
-</div>
-</div>
-</div>
+<!-- About Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center" id="expertise">
 <div class="relative group">
-<div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-<div class="relative bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden aspect-video">
-<img class="w-full h-full object-cover" data-alt="Developer working on a laptop with code on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD-2eBJRlAiqhJwavVnazLKZXlJY-Fg_z0dyYMvbuZULLbNb8lDjXkq7jpY9Ey_FzPMUu9x6wVlC9gvD8KA4G8ndej4GSZI65HRZ-PWxB854zJndypL1Jgj3TMQOPyBASRN4ljUYeMMFfjjKzuCWBeTCL-R0T_nhud5RlF0aiiib1KT6-l8IteVy7qGrY-2Why6jIcTOUOHLJS3OwLYWd62zcItd_7q_NqalNxYg5IQRkIt2e2wXYHIF5b8oDQz9BQ7mTvTmpRNRAx"/>
+<div class="absolute inset-0 bg-primary/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all"></div>
+<img alt="Luciana Machado" class="relative z-10 rounded-2xl transition-all duration-700 w-full aspect-[2/3] object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida/ADBb0ujDbZU7NM6xdjfXflwhuFZRHlkOrQvPdguz4Fm9gAifItyjU8CFbuwlEsYDtOeDQ5Gu0ruzrm6tTuOpOauDDRVVeR_YDJRKSnzQlDDnoGV8D77UWtW5lSjFi5clByajTMX7dpA_joMa8lUoOKRatdwjhQXdosFRsxksKyifv9Z9bXqqG2s1-yx8xR2yNsVMpBm8HixTrBolVvAEPq8alYU8jP26AuAs-M6vHP4LcfCKPCw5IYiqSvGBTNWuWSzNsdSk-r9M1Eewdw"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-xl z-0"></div>
+</div>
+<div class="space-y-6">
+<h2 class="text-4xl font-headline font-bold text-on-surface">Trajetória e Visão</h2>
+<div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">
+<p>Com uma base sólida em <span class="text-primary font-semibold">Pedagogia</span>, minha jornada sempre foi impulsionada pela busca do desenvolvimento humano.</p>
+<p>Especializei-me em <span class="text-tertiary font-semibold">Gestão de Negócios e RH</span>, unindo a visão educacional às necessidades estratégicas do mercado corporativo.</p>
+<p>Atualmente, estou imersa no universo da <span class="text-secondary font-semibold">Ciência e Tecnologia</span>, cursando uma nova graduação para catalisar a transição entre a educação tradicional e a inovação tecnológica disruptiva.</p>
+</div>
+<div class="flex gap-4 pt-6">
+<div class="px-4 py-2 bg-surface-container-high rounded-lg border border-outline-variant/10 text-sm">Pedagogia</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-lg border border-outline-variant/10 text-sm">Estratégia de Negócios</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-lg border border-outline-variant/10 text-sm">Estudante de Tecnologia</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="py-24 bg-surface-container-low/50" id="experience">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-4xl font-headline font-bold text-center mb-16">Marcos Profissionais</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Exp Card 1 -->
+<div class="glass-card p-8 rounded-2xl border border-outline-variant/10 hover:border-secondary/40 transition-all group">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">rocket_launch</span>
+<h3 class="text-xl font-bold mb-2">Embaixadora da Inovação</h3>
+<p class="text-xs font-label text-primary uppercase tracking-widest mb-4">SEBRAE / IMD</p>
+<p class="text-on-surface-variant text-sm">Liderança em ecossistemas de inovação e fomento ao Conexão Empreendedora.</p>
+</div>
+<!-- Exp Card 2 -->
+<div class="glass-card p-8 rounded-2xl border border-outline-variant/10 hover:border-secondary/40 transition-all group">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">architecture</span>
+<h3 class="text-xl font-bold mb-2">Supervisora Pedagógica</h3>
+<p class="text-xs font-label text-primary uppercase tracking-widest mb-4">SESI / RN</p>
+<p class="text-on-surface-variant text-sm">Gestão educacional de alto impacto focada em resultados e inovação metodológica.</p>
+</div>
+<!-- Exp Card 3 -->
+<div class="glass-card p-8 rounded-2xl border border-outline-variant/10 hover:border-secondary/40 transition-all group">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">hub</span>
+<h3 class="text-xl font-bold mb-2">Coordenadora Pedagógica</h3>
+<p class="text-xs font-label text-primary uppercase tracking-widest mb-4">SENAR / RN</p>
+<p class="text-on-surface-variant text-sm">Coordenação de projetos educacionais de larga escala e treinamento técnico.</p>
+</div>
+<!-- Exp Card 4 -->
+<div class="glass-card p-8 rounded-2xl border border-outline-variant/10 hover:border-secondary/40 transition-all group">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">school</span>
+<h3 class="text-xl font-bold mb-2">Supervisora e Professora</h3>
+<p class="text-xs font-label text-primary uppercase tracking-widest mb-4">SENAC</p>
+<p class="text-on-surface-variant text-sm">Excelência em ensino profissionalizante e supervisão de equipes acadêmicas.</p>
 </div>
 </div>
 </div>
 </section>
-<section class="py-20 px-6 md:px-20" id="curriculum">
-<div class="max-w-[960px] mx-auto">
-<div class="text-center mb-16">
-<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold mb-4">O que você vai aprender</h2>
-<p class="text-slate-500 max-w-xl mx-auto">Uma trilha pensada para te levar do zero absoluto até a autonomia total no desenvolvimento web moderno.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined">html</span>
-</div>
-<h3 class="text-slate-900 dark:text-white text-lg font-bold">Base Sólida</h3>
-<p class="text-slate-500 text-sm leading-normal">Estruturação com HTML5 semântico e estilização avançada com CSS3, Flexbox e Grid.</p>
-</div>
-<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined">javascript</span>
-</div>
-<h3 class="text-slate-900 dark:text-white text-lg font-bold">Lógica (JS)</h3>
-<p class="text-slate-500 text-sm leading-normal">Domine a lógica de programação, manipulação de DOM, APIs e JavaScript Assíncrono.</p>
-</div>
-<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined">deployed_code</span>
-</div>
-<h3 class="text-slate-900 dark:text-white text-lg font-bold">Modernidade</h3>
-<p class="text-slate-500 text-sm leading-normal">Aprenda React, Hooks, Context API e as bibliotecas mais utilizadas no ecossistema.</p>
-</div>
-<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182234] p-6 hover:border-primary/50 transition-colors group">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined">bolt</span>
-</div>
-<h3 class="text-slate-900 dark:text-white text-lg font-bold">Boas Práticas</h3>
-<p class="text-slate-500 text-sm leading-normal">Performance, SEO, Acessibilidade, Clean Code e testes automatizados para front-end.</p>
+<!-- Innovation Bento Grid -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="innovation">
+<h2 class="text-4xl font-headline font-bold mb-12">Hub de Inovação</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 min-h-[600px]">
+<div class="md:col-span-2 glass-card rounded-3xl p-10 flex flex-col justify-end relative overflow-hidden group">
+<img alt="Programas de Startup" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg5cqGU8XH9SIW0KUdvEp9xBNfnKak1FEMy92mqsTyQ_57CsjrvCuyhxWg3B2NYei1WIewTl_ZAh471nIwvijnG8DfC-gVimE9OEH86HS-g0zj5bCeZqYGT8fcE1a03-rhfaBDcVY3wQ-Ldsc4eLIIieVxyHbYsb3CA37zxSQU7pfQ9Ry0Mosiw1GpweQ9xdLWicWg-uTV7SBUdDSuykixsPM8pY1fFvXYt2XIFWjJxw52M7lbWpZPG99WDGIupG-xdyaKFmXKX8Y"/>
+<div class="relative z-10">
+<div class="text-secondary font-label uppercase tracking-widest mb-2">Programas</div>
+<h3 class="text-3xl font-bold mb-4">Startup Supernova</h3>
+<p class="text-on-surface-variant max-w-md">Mentoria e desenvolvimento de negócios tecnológicos com foco em escalabilidade e impacto social.</p>
 </div>
 </div>
+<div class="glass-card rounded-3xl p-8 border border-primary/20 bg-gradient-to-br from-surface-container-high to-primary/5">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">psychology</span>
+<h3 class="text-2xl font-bold mb-4">IA e Ciência de Dados</h3>
+<ul class="space-y-3 text-on-surface-variant text-sm">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Fundamentos de Machine Learning</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Visualização e Análise de Dados</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Ética em Inteligência Artificial</li>
+</ul>
 </div>
-</section>
-<section class="py-20 px-6 md:px-20 bg-background-light dark:bg-[#0b0f1a]" id="projects">
-<div class="max-w-[960px] mx-auto">
-<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold mb-12 text-center">Projetos que você vai construir</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 border border-slate-200 dark:border-slate-800">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern administrative dashboard UI design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrlpVcXkPTDckz-lfuFXO3C1rwea5bwY-Iy6_UmgX-rE5BTKy2Cj11R40ibLOScmLV-hQ5aB5rvilrz1a-euj3X2jGY4tncPmy_PnWqILCd8bpj-plsLVlrjOhbFCk8_bU4z-Wcv8jPjLeoi7upB2-sRjyAtU2DezeJpw1qr3w5P23vIYNDfzgrgRwXFm8o82ythuDjSGsDmX1p1ExJDY9lnD94b2QiwVHow93WCI1t50CfE2Ahw5ofRdcCFEeljclHm5F0yNIGSSW"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent flex items-end p-6">
-<div>
-<p class="text-primary text-xs font-bold uppercase mb-1">Aplicação Web</p>
-<h4 class="text-white font-bold text-lg">Dashboard Financeiro</h4>
+<div class="glass-card rounded-3xl p-8 flex flex-col justify-center items-center text-center border border-secondary/20 bg-gradient-to-br from-surface-container-high to-secondary/5">
+<div class="flex -space-x-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-slate-800 border-2 border-background flex items-center justify-center font-bold text-xs uppercase">Python</div>
+<div class="w-16 h-16 rounded-full bg-slate-700 border-2 border-background flex items-center justify-center font-bold text-xs uppercase">Mulheres</div>
+<div class="w-16 h-16 rounded-full bg-slate-600 border-2 border-background flex items-center justify-center font-bold text-xs uppercase">Tech</div>
 </div>
+<h3 class="text-xl font-bold mb-2">Eventos de Tecnologia</h3>
+<p class="text-on-surface-variant text-sm">Contribuidora ativa da Python Brasil e Women Techmakers.</p>
 </div>
+<div class="md:col-span-2 glass-card rounded-3xl p-10 flex flex-col md:flex-row gap-8 items-center bg-surface-container-highest">
+<div class="flex-1 space-y-4">
+<div class="text-tertiary font-label uppercase tracking-widest">Impacto</div>
+<h3 class="text-3xl font-bold">Obras Publicadas e Inclusão</h3>
+<p class="text-on-surface-variant">Autorias dedicadas à inclusão digital e metodologias ativas para capacitação de professores.</p>
 </div>
-<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 border border-slate-200 dark:border-slate-800">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Online store interface showing products" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE_RxOwj7SzpauPgsuQwVr7gWyroc-b6Y-UYD7TfNM9pJBJKUyru-TgDTXYyi6Ic_HZ1-O-u9NwM5pBFptKK7HJBEaGldVFzn4bM9zJHY_a-r7pVLXN_xeA_G7AzC-2UvdvLXaFoP6H0__VpfdHkTg2IxHGMZ7-WzgnhebaqTNfNKlmUYrJWtEqLxUrt5KV5ejMs6rcN9RHL3blbd7wIZX-gHOMzAVea2E6gF0I35ST01CHknkaCr2MA6KgQ0OJLcZ3BL9PogQktkb"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent flex items-end p-6">
-<div>
-<p class="text-primary text-xs font-bold uppercase mb-1">E-commerce</p>
-<h4 class="text-white font-bold text-lg">Loja Virtual Completa</h4>
+<div class="grid grid-cols-2 gap-4 w-full md:w-auto">
+<div class="h-32 w-24 bg-surface-variant rounded-lg border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/20 text-4xl">book</span>
 </div>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 border border-slate-200 dark:border-slate-800">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist personal portfolio website" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPShZ6-rN-ULHDX9RZ-zPCRlQMqKb1_Hi6loc06gMeLqVVU3iIdY5uU3gQ7nHBzPetUXyfrAUYg9RPZfFMGSerJjGYMqWY860mKHY_HZUfnO3NfgeeIJYOJiKvOsFskNm1ew8s-40zz3MPu4bvdN9EmwJCr2vUtYQl0IRRSdn0wkGPGPEcUMOUG1K-lzKebbxvkCy9UE9JI3-1zh5d-fSJ4LhGtFQL07GOrYZEi-hca6IwC6ch17_QfaMd89fCzAzroWPrJuoCLetQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent flex items-end p-6">
-<div>
-<p class="text-primary text-xs font-bold uppercase mb-1">Portfolio</p>
-<h4 class="text-white font-bold text-lg">Seu Próprio Site</h4>
-</div>
+<div class="h-32 w-24 bg-surface-variant rounded-lg border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/20 text-4xl">menu_book</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-20 px-6 md:px-20" id="faq">
-<div class="max-w-[720px] mx-auto">
-<h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-10 text-center">Perguntas Frequentes</h2>
-<div class="flex flex-col gap-4">
-<details class="group p-6 rounded-xl bg-background-light dark:bg-[#182234] border border-slate-200 dark:border-slate-800 cursor-pointer">
-<summary class="flex items-center justify-between text-slate-900 dark:text-white font-bold list-none">
-                                    Preciso ter conhecimento prévio?
-                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<p class="mt-4 text-slate-500 leading-relaxed">
-                                    Não! O curso é estruturado para levar você do zero absoluto até o nível profissional. Começamos com os fundamentos básicos da web.
-                                </p>
-</details>
-<details class="group p-6 rounded-xl bg-background-light dark:bg-[#182234] border border-slate-200 dark:border-slate-800 cursor-pointer">
-<summary class="flex items-center justify-between text-slate-900 dark:text-white font-bold list-none">
-                                    Quanto tempo dura o curso?
-                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<p class="mt-4 text-slate-500 leading-relaxed">
-                                    O acesso é vitalício. Em média, nossos alunos concluem todos os módulos e projetos em 6 a 8 meses, estudando 5 horas por semana.
-                                </p>
-</details>
-<details class="group p-6 rounded-xl bg-background-light dark:bg-[#182234] border border-slate-200 dark:border-slate-800 cursor-pointer">
-<summary class="flex items-center justify-between text-slate-900 dark:text-white font-bold list-none">
-                                    Terei ajuda durante o curso?
-                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<p class="mt-4 text-slate-500 leading-relaxed">
-                                    Com certeza! Temos uma comunidade exclusiva no Discord e suporte individual na plataforma para tirar todas as suas dúvidas técnicas.
-                                </p>
-</details>
+<!-- Skills Grid -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<h2 class="text-4xl font-headline font-bold text-center mb-16">Competências Principais</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Skill 1 -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-lg font-bold">Gestão de Pessoas</span>
+<span class="text-secondary text-sm font-label">95%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[95%]"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-lg font-bold">Inovação e Empreendedorismo</span>
+<span class="text-primary text-sm font-label">90%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[90%]"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-lg font-bold">Integração IA e Tecnologia</span>
+<span class="text-tertiary text-sm font-label">85%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[85%]"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-lg font-bold">Gestão de Projetos</span>
+<span class="text-secondary text-sm font-label">88%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[88%] shadow-[0_0_15px_rgba(0,218,243,0.3)]"></div>
+</div>
+</div>
+<!-- Skill 5 -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-lg font-bold">Design Educacional</span>
+<span class="text-primary text-sm font-label">98%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%] shadow-[0_0_15px_rgba(166,140,255,0.3)]"></div>
+</div>
+</div>
+<!-- Skill 6 -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-lg font-bold">Comunicação Estratégica</span>
+<span class="text-tertiary text-sm font-label">92%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[92%] shadow-[0_0_15px_rgba(255,177,193,0.3)]"></div>
+</div>
 </div>
 </div>
 </section>
-<section class="py-20 px-6 md:px-20 bg-primary">
-<div class="max-w-[960px] mx-auto text-center flex flex-col items-center gap-8">
-<h2 class="text-white text-4xl md:text-5xl font-black">Transforme sua carreira hoje.</h2>
-<p class="text-white/80 text-lg max-w-xl">
-                            Junte-se a mais de 10.000 alunos e comece a criar o futuro da web. Garantia de 30 dias ou seu dinheiro de volta.
-                        </p>
-<button class="bg-white text-primary hover:bg-slate-100 rounded-lg h-14 px-12 text-lg font-bold shadow-2xl transition-all">
-                            Começar Agora
-                        </button>
+<!-- Mission Section -->
+<section class="py-24 relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<span class="material-symbols-outlined text-6xl text-primary mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="text-3xl md:text-5xl font-headline font-bold italic leading-tight mb-8">
+                    "Minha missão é democratizar a inovação, fortalecendo a liderança feminina e construindo pontes entre o conhecimento e a tecnologia."
+                </h2>
+<div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
 </div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
 </section>
 </main>
-<footer class="bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-16 px-6 md:px-20">
-<div class="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="col-span-1 md:col-span-2">
-<div class="flex items-center gap-2 text-primary mb-6">
-<span class="material-symbols-outlined text-3xl">terminal</span>
-<h2 class="text-slate-900 dark:text-white text-lg font-bold">Front-end Pro</h2>
-</div>
-<p class="text-slate-500 text-sm max-w-xs mb-6">
-                            Formando desenvolvedores de elite para as melhores empresas de tecnologia do mundo.
-                        </p>
-<div class="flex gap-4">
-<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
-<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
-</div>
-</div>
-<div>
-<h4 class="text-slate-900 dark:text-white font-bold mb-6">Links Rápidos</h4>
-<ul class="flex flex-col gap-4 text-sm text-slate-500">
-<li><a class="hover:text-primary transition-colors" href="#">Grade Curricular</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Depoimentos</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Mentoria</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Certificado</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-slate-900 dark:text-white font-bold mb-6">Suporte</h4>
-<ul class="flex flex-col gap-4 text-sm text-slate-500">
-<li><a class="hover:text-primary transition-colors" href="#">Central de Ajuda</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Contato</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a></li>
-</ul>
+<!-- Footer -->
+<footer class="bg-slate-950 py-20 px-8" id="contact">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 gap-12 mb-16">
+<div class="space-y-8">
+<h2 class="text-4xl font-headline font-bold text-white">Vamos Conectar</h2>
+<p class="text-on-surface-variant text-lg">Disponível para colaborações em projetos de educação digital, inovação corporativa e mentorias tecnológicas.</p>
+<div class="space-y-4">
+<a class="flex items-center gap-4 group" href="mailto:lucianamachadoads@gmail.com">
+<span class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-variant text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mail</span>
+</span>
+<span class="text-lg text-slate-300 group-hover:text-white transition-colors">lucianamachadoads@gmail.com</span>
+</a>
+<div class="flex items-center gap-4 group">
+<span class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-variant text-secondary">
+<span class="material-symbols-outlined">call</span>
+</span>
+<span class="text-lg text-slate-300">+55 (84) XXXX-XXXX</span>
 </div>
 </div>
-<div class="max-w-[960px] mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-<p>© 2024 Front-end Pro. Todos os direitos reservados.</p>
-<div class="flex gap-6">
-<span>Desenvolvido com ❤️ para Devs</span>
+</div>
+<div class="glass-card p-10 rounded-3xl border border-white/5 space-y-6">
+<h3 class="text-xl font-bold">Ecossistema Social</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<a class="flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all" href="#">
+<span>LinkedIn</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+<a class="flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all" href="#">
+<span>CV Lattes</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+<a class="flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all" href="#">
+<span>Instagram</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+<a class="flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all" href="#">
+<span>GitHub</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-6">
+<p class="font-['Manrope'] text-sm text-slate-500">© 2024 Luciana Gouveia Machado | Especialista em Educação e Inovação</p>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-cyan-400 transition-colors text-sm" href="#">Arquivo do Portfólio</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors text-sm" href="#">Privacidade</a>
+</div>
 </div>
 </div>
 </footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-2xl bg-slate-950/80 backdrop-blur-2xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-cyan-400 bg-cyan-500/10 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300" href="#expertise">
+<span class="material-symbols-outlined">school</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Especialidade</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300" href="#experience">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Projetos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300" href="#innovation">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Inovação</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300" href="#contact">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Contato</span>
+</a>
 </div>
-</div>
+</nav>
 </body></html>
-
-<a href="index.html">Voltar</a>
-
-</body>
-</html>
